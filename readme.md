@@ -1,20 +1,20 @@
-## Threedriver
+# Threedriver
 
-### Features
+## Features
 Threedriver is a script for mapping and matching OneDrive/SharePoint directories. It is Selenium based and will first crawl, and then, if matchers are specified, download the files looking for the specified regular expressions.
 
 It can currently search in `.docx`, `.pptx`, `.xlsx`,  `.msg`, `.pdf`, and any other pure text files as `.txt`, `.csv`, and so on.
 File format detection is not extension, but header reliant, avoiding most false positives/false negatives.
 
 
-### Setup
+## Setup
 As any Selenium project it requires a working browser and it's webdriver. For Chromium it can be found here: https://chromedriver.chromium.org/downloads
 For some distros it can also be found in the package manager, please refer to your prefered search engine on the best source for your system.
 
 More details on Firefox setup can be found further into this page.
 
 
-##### Using enviroment variables:
+#### Using enviroment variables:
 
 Linux 
 ```
@@ -30,7 +30,7 @@ set WEBDRIVER=$WEBDRIVER_PATH
 ./threedriver.py -h
 ```
 
-##### Using local executable file
+#### Using local executable file:
 If the `WEBDRIVER` enviroment variable is not set by default the script looks for `.\chromedriver.exe` on Windows and `./chromedriver` on any other system.
 
 ```
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 ```
 
 
-### Usage
+## Usage
 ```
 python threedriver.py -h
 usage: threedriver.py [-h] [--verbose] [--max-depth N] [--blacklist FILE_PATH] [--delay T] [--json OUTPUT_FILE] [--matcher REGEX_STRING] [--quiet]
@@ -69,7 +69,8 @@ optional arguments:
   --firefox, -F
 ```
 
-The verbose flag can be repeated for increased output.
+`--verbose` can be repeated for increased output.
+
 `--max-depth` represents how many layers into the file system the script will crawl.
 
 `--blacklist` referers to files/folders to be ignored from crawling/matching. As `--matchers` this is an incremental flag.
@@ -114,15 +115,15 @@ As with `--blacklist` and `--matchers` this is also an incremental flag.
 `--firefox` untested option allowing usage with Firefox instead of Chrome/Chromium. More details on the current limitations for this option can be found below.
 
 
-### Firefox support
+## Firefox support
 
 Firefox is not currently supported for matching operations, or usage with a proxy, for that some adaptations need to be made in the `__init__` function. Namely the proxy support, the way it finds the driver executable, and to set the default download folder.
 
 
-### Current development state
+## Current development state
 Although fully functional for OneDrive, SharePoint uses significantly different URLs and HTML code, even while looking very similar, and thus the script is currently unable to extract and process SharePoint data.
 
-##### TODO
+### TODO
 Lines with pending features can be located by the tag `TODO`, while lines with broken features can be found looking for the tag `BROKEN`, these lines also include a brief description of the problem, and the requirements for a fix.
 
 This file should also be broken down into multiple files, and made into a proper module, considering it's current dimensions.
