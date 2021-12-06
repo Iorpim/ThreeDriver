@@ -99,7 +99,7 @@ Default: unlimited
 
 `--extension-blacklist` defines which extensions to ignore during matching. If the extension is matched the file won't even be downloaded. 
 Note this is a simple matching of the end of the file name, a too open filter could have unwanted results, for example `txt` would also match `exampletxt` and not only `example.txt`.
-As with `--blacklist` and `--matchers` this is also an incremental flag, so for multiple extensions the flag should be passed multiple times.
+As with `--blacklist` and `--matchers` this is also an incremental flag.
 
 `--load-fs` points to a `JSON_fs.json` file which can be used to skip the crawling step in case it has alreaby been completed before. If `--json` is set this file is exported before matching, meaning this will still be created even in case of any errors during later execution stages.
 
@@ -124,3 +124,5 @@ Although fully functional for OneDrive, SharePoint uses significantly different 
 
 ##### TODO
 Lines with pending features can be located by the tag `TODO`, while lines with broken features can be found looking for the tag `BROKEN`, these lines also include a brief description of the problem, and the requirements for a fix.
+
+This file should also be broken down into multiple files, and made into a proper module, considering it's current dimensions.
