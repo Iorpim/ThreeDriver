@@ -1,0 +1,8 @@
+extract_msg==0.28.7
+humanfriendly==10.0
+openpyxl==3.0.9
+PyPDF2==1.26.0
+python_docx==0.8.11
+python_magic==0.4.24
+python_pptx==0.6.21
+selenium==3.141.0
